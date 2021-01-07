@@ -8,6 +8,11 @@ import {name as appName} from './app.json';
 import messaging from '@react-native-firebase/messaging';
 import notifee from '@notifee/react-native';
 
+notifee.onBackgroundEvent(async ({ type, detail }) => {
+  const { notification } = detail;
+  console.log('Message handled in the notifee background!', notification);
+});
+
 messaging().setBackgroundMessageHandler(async remoteMessage => {
   console.log('Message handled in the background!', remoteMessage);
   let isIOS = Platform.OS === 'ios';
