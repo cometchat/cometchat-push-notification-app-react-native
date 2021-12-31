@@ -553,7 +553,7 @@ You need to add the code in AppDelegate.m file to display CallKit
 
 ---
 
-For more information, you can visit our [documentation](https://app.developerhub.io/cometchat-documentation/v3/extensions/react-native-push-notifications).
+For more information, you can visit our [documentation](https://www.cometchat.com/docs/extensions/react-native-push-notifications).
 
 **NOTE**
 
