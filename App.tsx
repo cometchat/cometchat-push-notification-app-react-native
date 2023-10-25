@@ -33,6 +33,12 @@ const App = () => {
 
   useLayoutEffect(() => {
     getPermissions();
+    CometChat.setDemoMetaInfo({
+      name: "React Native Push Notification Sample App",
+      type: "push-notification-react-native",
+      version: "1.0",
+      platform: "react-native",
+    });
     CometChatUIKit.init({
       appId: COMETCHAT_CONSTANTS.APP_ID,
       authKey: COMETCHAT_CONSTANTS.AUTH_KEY,
