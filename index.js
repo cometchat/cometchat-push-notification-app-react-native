@@ -11,10 +11,26 @@ import {TokenRegisterHandler} from './utils/tokenRegisterHandler';
 import {NotificationHandler} from './utils/notificationHandler';
 import {navigationRef} from './src/StackNavigator';
 import {AndroidStyle} from '@notifee/react-native';
-import { SCREENS_CONSTANTS } from './src/CONSTS';
+import {SCREENS_CONSTANTS} from './src/CONSTS';
+import {CometChatUIKit} from '@cometchat/chat-uikit-react-native';
+import {COMETCHAT_CONSTANTS} from './src/CONSTS';
 
 new TokenRegisterHandler();
 new NotificationHandler();
+
+CometChatUIKit.init({
+  appId: COMETCHAT_CONSTANTS.APP_ID,
+  authKey: COMETCHAT_CONSTANTS.AUTH_KEY,
+  region: COMETCHAT_CONSTANTS.REGION,
+})
+  .then(() => {
+    if (CometChat.setSource) {
+      CometChat.setSource('ui-kit', Platform.OS, 'react-native');
+    }
+  })
+  .catch(() => {
+    return null;
+  });
 
 messaging().onMessage(async message => {
   console.log('Message handled in the forground!', message);

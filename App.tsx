@@ -6,10 +6,8 @@ import {
   StatusBar,
 } from 'react-native';
 import {CometChat} from '@cometchat/chat-sdk-react-native';
-import {COMETCHAT_CONSTANTS} from './src/CONSTS';
 import {CometChatContextProvider} from '@cometchat/chat-uikit-react-native';
 import {CometChatTheme} from '@cometchat/chat-uikit-react-native';
-import {CometChatUIKit} from '@cometchat/chat-uikit-react-native';
 import StackNavigator from './src/StackNavigator';
 import {UserContextProvider} from './UserContext';
 import {CometChatIncomingCall} from '@cometchat/chat-uikit-react-native';
@@ -39,19 +37,6 @@ const App = () => {
       version: "1.0",
       platform: "react-native",
     });
-    CometChatUIKit.init({
-      appId: COMETCHAT_CONSTANTS.APP_ID,
-      authKey: COMETCHAT_CONSTANTS.AUTH_KEY,
-      region: COMETCHAT_CONSTANTS.REGION,
-    })
-      .then(() => {
-        if (CometChat.setSource) {
-          CometChat.setSource('ui-kit', Platform.OS, 'react-native');
-        }
-      })
-      .catch(() => {
-        return null;
-      });
 
     // CometChat.addCallListener(
     //   listnerID,
