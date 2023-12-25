@@ -10,9 +10,9 @@
     "test": "jest"
   },
   "dependencies": {
-    "@cometchat/calls-sdk-react-native": "4.0.2",
-    "@cometchat/chat-sdk-react-native": "4.0.2",
-    "@cometchat/chat-uikit-react-native": "^4.0.0",
+    "@cometchat/calls-sdk-react-native": "^4.0.4",
+    "@cometchat/chat-sdk-react-native": "^4.0.5",
+    "@cometchat/chat-uikit-react-native": "^4.1.0",
     "@notifee/react-native": "^7.8.0",
     "@react-native-async-storage/async-storage": "^1.18.2",
     "@react-native-community/clipboard": "^1.5.1",
